@@ -6,11 +6,11 @@
 /*   By: moalmull <moalmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 13:34:13 by moalmull          #+#    #+#             */
-/*   Updated: 2024/09/04 15:50:31 by moalmull         ###   ########.fr       */
+/*   Updated: 2024/09/09 15:56:32 by moalmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 
 char	*ft_strlowcase(char *str)
 {
@@ -65,7 +65,7 @@ char	*ft_strcapitalize(char *str)
 	{
 		if (is_lowercase(str[i]))
 		{
-			if (j && (str[i] >= 'a' && str[i] <= 'z'))
+			if (j && (is_lowercase(str[i])) && (!is_digit(str[i - 1])))
 			{
 				str[i] -= 32;
 			}
@@ -82,7 +82,7 @@ char	*ft_strcapitalize(char *str)
 
 /*
 int	main(void){
-	char b[] = "hello welcome to this world";
+	char b[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
 	printf("%s", ft_strcapitalize(b));
 	return(0);
 }
